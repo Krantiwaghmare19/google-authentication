@@ -6,7 +6,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import GoogleIcon from '@mui/icons-material/Google';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const theme = createTheme({
     palette: {
@@ -16,16 +16,14 @@ const theme = createTheme({
     },
 });
 
-const linkStyle = {
-    textDecoration: 'none',
-    color: 'inherit',
-};
+
 
 const SignIn = () => {
     const [password, setPassword] = useState("");
     const [userEmail, setUserEmail] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [loggedIn, setLoggedIn] = useState(false);
+    const navigate = useNavigate();
 
     const handleClick = async () => {
         try {
@@ -51,9 +49,9 @@ const SignIn = () => {
         e.preventDefault();
 
         if (password === "kranti@123") {
-            alert(`Logged is Successfully`)
+            alert(`Logged is Successfully`);
             setPassword("");
-        } else {
+            navigate('/home'); 
             alert("Incorrect password");
         }
     };
@@ -74,8 +72,8 @@ const SignIn = () => {
                     textAlign: "center",
                 }}
             >
-                 <Box>
-                     {loggedIn ? (
+                <Box>
+                    {loggedIn ? (
                         <p>{userEmail}</p>
                     ) : (
                         <Button
@@ -122,14 +120,8 @@ const SignIn = () => {
                                 fullWidth
                                 sx={{ mt: 2 }}
                             >
-
-                                <Button color="inherit">
-                                    <Link to="/" style={linkStyle}>
-                                        Login
-                                    </Link>
-                                </Button>
+                                Login
                             </Button>
-
                         </form>
                     )}
                 </Box>

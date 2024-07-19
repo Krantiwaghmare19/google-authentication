@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { TextField, Button, Container, Box, Card, Typography, CssBaseline, IconButton, InputAdornment } from '@mui/material';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
@@ -13,7 +13,6 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState('');
-    const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -21,7 +20,6 @@ const Login = () => {
         if ((email === 'krantiwaghmare@gmail.com' || email === 'krantiwaghmare@navgurukul.org') && password === 'kranti@123') {
             setError('');
             alert('Login successful!');
-            navigate('/home'); // Navigate to the home page
         } else {
             setError('Invalid email or password');
         }
@@ -127,4 +125,3 @@ const Login = () => {
 };
 
 export default Login;
-
