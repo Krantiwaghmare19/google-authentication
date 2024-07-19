@@ -8,8 +8,6 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { Link } from 'react-router-dom';
 
-
-
 const theme = createTheme({
     palette: {
         primary: {
@@ -28,8 +26,6 @@ const SignIn = () => {
     const [userEmail, setUserEmail] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [loggedIn, setLoggedIn] = useState(false);
-
-
 
     const handleClick = async () => {
         try {

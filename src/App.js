@@ -6,18 +6,17 @@ import ForgotPassword from './components/ForgotPassword';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 
-
 function App() {
     return (
         <Router>
             <div>
                 <Navbar />
                 <Routes>
-                    
+
                     <Route path="/login" element={<Login />} />
                     <Route path="/" element={<Home />} />
                     <Route path="/forgot-password" element={<ForgotPassword />} />
-                    
+
                 </Routes>
             </div>
         </Router>
