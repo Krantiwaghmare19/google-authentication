@@ -8,7 +8,7 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { login,  selectUser } from "../redux/userSlice";
+import { login, selectUser } from "../redux/userSlice";
 
 const theme = createTheme({
     palette: {
@@ -50,7 +50,7 @@ const SignIn = () => {
         if (password === "kranti@123") {
             alert(`Logged in Successfully`);
             setPassword("");
-            navigate('/home'); 
+            navigate('/home');
         }
     };
 
