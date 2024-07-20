@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Typography } from '@mui/material';
+import Logout from './Logout';
 
 const Home = () => {
 
@@ -17,6 +18,8 @@ const Home = () => {
             <Typography variant="body1">
                 Welcome to the home page!
             </Typography>
+            <Logout/>
+
         </Container>
     );
 };
