@@ -157,7 +157,7 @@ const theme = createTheme({
 const SignIn = () => {
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
-    const [isGoogleSignedIn, setIsGoogleSignedIn] = useState(false); // Track Google sign-in state
+    const [isGoogleSignedIn, setIsGoogleSignedIn] = useState(false); 
     const user = useSelector(selectUser);
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -168,7 +168,7 @@ const SignIn = () => {
             const { email } = data.user;
             dispatch(login({ email }));
             localStorage.setItem("email", email);
-            setIsGoogleSignedIn(true); // Set to true after successful Google sign-in
+            setIsGoogleSignedIn(true); 
         } catch (error) {
             console.error(error);
         }
@@ -197,7 +197,7 @@ const SignIn = () => {
         const storedEmail = localStorage.getItem("email");
         if (storedEmail) {
             dispatch(login({ email: storedEmail }));
-            setIsGoogleSignedIn(true); // Set to true if email is found in local storage
+            setIsGoogleSignedIn(true); 
         }
     }, [dispatch]);
 
